@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #333;
+    color: white;
+}
+
+main{
+    min-height: 100svh;
+}
+
+.wrapper{
+    display: grid;
+    gap: 0.6rem;
+    
+    padding: 1.5rem;
+    place-items: center;
+    font-size: 1.3rem;
+}
+
+.wrapper h2{
+    font-size: clamp(1rem, 1rem + 5vw, 5rem);
+    text-align: center;
+}
+
+.wrapper a{
+    font-size: clamp(0.8rem, 0.8rem + 2vw, 1.8rem);
+    color: white;
+}
+
+.number-container{
+    display: grid;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+}
+
+.number{
+    font-size: 1.5rem;
+    padding: clamp(0.1rem, 1vh, 1rem) clamp(0.2rem, 2vw - 0.2rem, 1.2rem);
+}
