@@ -1,4 +1,6 @@
-const generateNumbers = () => {
+document.getElementById("submitBtn").onclick = (e) => {
+    e.preventDefault();
+
     const isPrime = (num) => {
         if (num < 2) return false;
 
@@ -8,9 +10,17 @@ const generateNumbers = () => {
         return true;
     };
 
-    const numberContainer = document.getElementsByClassName("number-container")[0];
+    const numberContainer = document.querySelector(".number-container");
+    numberContainer.innerHTML = "";
+    
+    let numToGenerate = Number(document.getElementById("numberInput").value);
 
-    for (let i = 0; i < 101; i++){
+    if (isNaN(numToGenerate)){
+        alert("Enter only numbers");
+        return
+    }
+
+    for (let i = 1; i <= numToGenerate; i++){
         const num = document.createElement("p");
         num.setAttribute("class", "number");
         num.textContent = i;
@@ -24,5 +34,3 @@ const generateNumbers = () => {
         numberContainer.appendChild(num);
     }
 };
-
-generateNumbers();
